@@ -4,28 +4,28 @@ var slides = document.querySelectorAll(".slide");
 let currentSlide = 0;
 
 function buildQuiz(){
-    // variable to store the HTML output
-    var output = [];
+  // variable to store the HTML output
+  var output = [];
 
-    // for each question...
-    myQuestions.forEach(
-      (currentQuestion, questionNumber) => {
+  // for each question...
+  myQuestions.forEach(
+    (currentQuestion, questionNumber) => {
 
-        // variable to store the list of possible answers
-        var answers = [];
+      // variable to store the list of possible answers
+      var answers = [];
 
-        // and for each available answer...
-        for(letter in currentQuestion.answers){
+      // and for each available answer...
+      for(letter in currentQuestion.answers){
 
-          // ...add an HTML radio button
-          answers.push(
-            `<label>
-              <input type="radio" name="question${questionNumber}" value="${letter}">
-              ${letter} :
-              ${currentQuestion.answers[letter]}
-            </label>`
-          );
-        }
+        // ...add an HTML radio button
+        answers.push(
+          `<label>
+            <input type="radio" name="question${questionNumber}" value="${letter}">
+            ${letter} :
+            ${currentQuestion.answers[letter]}
+          </label>`
+        );
+      }
 
         // add this question and its answers to the output
         output.push(
@@ -105,7 +105,7 @@ function buildQuiz(){
   }
 
   // Variables
-  var quizContainer = document.getElementById('quiz');
+  var quizContainer = document.getElementById('question-container');
   var resultsContainer = document.getElementById('results');
   var submitButton = document.getElementById('submit');
   var myQuestions = [
@@ -139,10 +139,8 @@ function buildQuiz(){
     }
   ];
 
-  // Kick things off
   buildQuiz();
 
-  // Show the first slide
   showSlide(currentSlide);
 
   // Event listeners
