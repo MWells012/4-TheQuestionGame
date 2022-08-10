@@ -7,21 +7,17 @@
   }
 
 body {
-    font-family:Verdana, Geneva, Tahoma, sans-serif
+    font-family:Verdana, Geneva, Tahoma, sans-serif;
     line-height: 1.5;
     width: 80%;
     margin: 0 auto;
-
 }
 
-a {
-    
+.hide {
+    display: none;
 }
 
-.centered {
-
-}
- 
+/* Header Content */
 header {
     display: flex;
     flex-wrap: wrap;
@@ -33,4 +29,35 @@ header {
 
 .scores {
     color: var(--secondary-color);
+}
+
+
+/* QUIZ section */
+.start-quiz {
+
+}
+.start-btn {
+
+}
+
+/* BUTTONS */
+.answer-grid {
+
+}
+
+.right-wrong {
+
+}
+
+.next-btn {
+
+}
+
+/* LEADERBOARD */
+.highscores-container {
+
+}
+
+.highscore-list {
+
 }
