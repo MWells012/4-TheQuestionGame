@@ -9,6 +9,7 @@
 </head>
 
 <body>
+    <!-- we add the high scores and the timer into the header so they stay at the top of the page, and so also whwen we make adjustments in the body these remain unchanged-->
     <header>
         <div class="scores">
             <div id="highscores-link">View the High Scores</div>
@@ -17,8 +18,41 @@
             Time: 60
         </div>
     </header>
+<!-- this has the start button and the game directions-->
+    <section id="start-container" class="start-quiz">
+        <h1>Test your Javascript knowledge</h1>
+        <p> You will have 60 seconds to answer 5 questions testing your basic knowledge of Javascript. If you answer the question incorrectly 9 seconds will be deducted from the remaining time on your quiz. The timer is located in the top right of the page. When you click start the timer will automatically start and the timer will stop when you answer the last question also showing your score. You may save your high score at the end of the quiz. May the odds be in your favor. </p>
+        <div class="controls">
+            <button id="start-btn" class="start-btn">Start Quiz</button>
+        </div>
+    </section>
 
-        
+    <!-- this section contains the classes and ids for the answer button grid-->
+    <section id="question-container" class="hide">
+        <h2 id="quizQuestion">Question</h2>
+        <div id="answer-btn" class="answer-grid">
+            <button class="btn">Answer 1</button>
+            <button class="btn">Answer 2</button>
+            <button class="btn">Answer 3</button>
+            <button class="btn">Answer 4</button>
+        </div>
+        <h2 id="check-answer" class="right-wrong hide"></h2>
+        <div class="controls">
+            <button id="next-btn" class="next-btn hide">Next Question</button>
+        </div>
+    </section>
+<!-- this section contains the leader board where the scores will be locally stored-->
+    <section id="highscores" class="highscores-container hide">
+        <div id="high-scores">
+            <h2 class="centered">Leaderboard</h2>
+            <div id="highscore" class="highscore-list"></div>
+            <div class="controls">
+                <button id="reestart-btn">Restart the Quiz</button>
+                <button id="clear-btn">Clear Scores</button>
+            </div>
+        </div>
+    </section>
+
     <script src="./assets/js/script.js"></script>
 </body>
 </html>
