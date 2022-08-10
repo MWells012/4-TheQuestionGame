@@ -9,15 +9,16 @@
 </head>
 
 <body>
-    <!-- we add the high scores and the timer into the header so they stay at the top of the page, and so also whwen we make adjustments in the body these remain unchanged-->
+<!-- we add the high scores and the timer into the header so they stay at the top of the page, and so also whwen we make adjustments in the body these remain unchanged-->
     <header>
         <div class="scores">
-            <div id="highscores-link">View the High Scores</div>
+            <a id="highscores-link">View the High Scores</a>
         </div>
         <div id="timer" class="timer">
             Time: 60
         </div>
     </header>
+
 <!-- this has the start button and the game directions-->
     <section id="start-container" class="start-quiz">
         <h1>Test your Javascript knowledge</h1>
@@ -27,7 +28,7 @@
         </div>
     </section>
 
-    <!-- this section contains the classes and ids for the answer button grid-->
+<!-- this section contains the classes and ids for the answer button grid-->
     <section id="question-container" class="hide">
         <h2 id="quizQuestion">Question</h2>
         <div id="answer-btn" class="answer-grid">
@@ -41,13 +42,24 @@
             <button id="next-btn" class="next-btn hide">Next Question</button>
         </div>
     </section>
+
+<!-- the form to submit your initials, includes the text field that you type your initials into which is the form. -->
+    <section id="score-container" class="hide">
+        <form id="submit-form">
+            <h3 id="your-score"></h3>
+            <label id="initials">Enter your initials to display your score on the leaderboard:</label>
+            <input type="text" id="initials-field" placeholder="your initials here" />
+            <button id="submit-btn">Submit</button>
+        </form>
+    </section>
+
 <!-- this section contains the leader board where the scores will be locally stored-->
     <section id="highscores" class="highscores-container hide">
         <div id="high-scores">
             <h2 class="centered">Leaderboard</h2>
             <div id="highscore" class="highscore-list"></div>
             <div class="controls">
-                <button id="reestart-btn">Restart the Quiz</button>
+                <button id="restart-btn">Restart the Quiz</button>
                 <button id="clear-btn">Clear Scores</button>
             </div>
         </div>
