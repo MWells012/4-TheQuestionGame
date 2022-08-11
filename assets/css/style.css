@@ -1,9 +1,9 @@
 :root {
-    --primary-color: #420a57;
-    --secondary-color: #aaaaaa;
-    --tertiary-color: #000000;
-    --white-color: #ffffff;
-    --correct-color: #00ff26;
+    --primary-color: hsl(284, 84%, 20%);
+    --secondary-color: rgb(75, 74, 74);
+    --tertiary-color: hsl(0, 0%, 0%);
+    --white-color: hsl(0, 0%, 100%);
+    --correct-color: hsl(129, 100%, 50%);
   }
 
 body {
@@ -21,10 +21,12 @@ body {
 header {
     display: flex;
     flex-wrap: wrap;
+    margin-top: 15px;
 }
 
 .timer {
-    font-size: ;
+    font-size: 15px;
+    color: var(--tertiary-color);
 }
 
 .scores {
@@ -34,6 +36,7 @@ header {
 
 /* QUIZ section */
 .start-quiz {
+    text-align: center;
 
 }
 .start-btn {
@@ -42,6 +45,9 @@ header {
 
 /* BUTTONS */
 .answer-grid {
+    display: grid;
+    gap: 10px;
+    margin: 20px 0;
 
 }
 
@@ -53,11 +59,32 @@ header {
 
 }
 
+.controls {
+    display: flex;
+    margin: 10px;
+}
+
 /* LEADERBOARD */
 .highscores-container {
+    display: flex;
+    text-align: center;
 
 }
 
 .highscore-list {
 
+}
+
+button {
+font-family: Verdana, Geneva, Tahoma, sans-serif;
+background-color: var(--primary-color);
+color: var(--white-color);
+font-size: medium;
+padding: 10px;
+width: auto;
+border-radius: 5px;
+}
+
+h1, h2, h3 {
+    color: var(--primary-color);
 }
