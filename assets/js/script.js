@@ -99,7 +99,7 @@ function startQuiz () {
 };
 
 //move to the next quesiton
-function nextQuestion () {
+function setNextQuestion () {
     resetState();
     showQuestion(shuffledQuestions[currentQuestionIndex]);
 };
@@ -118,6 +118,18 @@ function showQuestion(question) {
         answerButtonsElement.appendChild(button)
     })
 };
+
+// Reset state function
+function resetState() {
+    //clearStatusClass(document.body)
+    nextButton.classList.add("hide")
+    checkAnswerEl.classList.add("hide")
+    while (answerButtonsEl.firstChild) {
+        answerButtonsEl.removeChild
+            (answerButtonsEl.firstChild)
+    }
+};
+
 
 function selectAnswer(e) {
     var selectedButton = e.target;
@@ -150,6 +162,22 @@ function selectAnswer(e) {
     }
 };
 
+// Check and show the correct answer by set the buttons colors
+function setStatusClass(element, correct) {
+    clearStatusClass(element)
+    if (correct) {
+        element.classList.add("correct");
+    } else {
+        element.classList.add("wrong");
+    }
+};
+
+// Remove all the classes
+function clearStatusClass(element) {
+    element.classList.remove("correct");
+    element.classList.remove("wrong");
+};
+
 function saveScore() {
     clearInterval(timerID);
     timerElement.textContent = "Time: " + timeLeft;
@@ -160,6 +188,29 @@ function saveScore() {
         document.getElementById("your-score").textContent = "Your final score is " + timeLeft;
 
     }, 2000)
+};
+
+var loadScores = function () {
+    // Get score from local storage
+
+    if (!savedScores) {
+        return false;
+    }
+
+    // Convert scores from stringfield format into array
+    savedScores = JSON.parse(savedScores);
+    var initials = document.querySelector("#initials-field").value;
+    var newScore = {
+        score: timeLeft,
+        initials: initials
+    }
+    savedScores.push(newScore);
+    console.log(savedScores)
+
+    savedScores.forEach(score => {
+        initialsField.innerText = score.initials
+        scoreField.innerText = score.score
+    })
 };
 
 function showHighScores(initials) {

@@ -39,9 +39,10 @@ header {
     text-align: center;
 
 }
+/* 
 .start-btn {
 
-}
+} */
 
 /* BUTTONS */
 .answer-grid {
@@ -51,13 +52,14 @@ header {
 
 }
 
-.right-wrong {
+/*.right-wrong {
 
 }
 
 .next-btn {
 
 }
+*/
 
 .controls {
     display: flex;
@@ -71,9 +73,9 @@ header {
 
 }
 
-.highscore-list {
+/*.highscore-list {
 
-}
+} */
 
 button {
 font-family: Verdana, Geneva, Tahoma, sans-serif;
