@@ -1,13 +1,65 @@
+var questions = [
+    {
+        question: 'question 1',
+        answers: [
+        { text: 'answer 1', correct: false },
+        { text: 'answer 2', correct: false },
+        { text: 'answer 3', correct: false },
+        { text: 'answer 4', correct: true }
+        ]
+
+    },
+    {
+        question: 'question 2',
+        answers: [
+        { text: 'answer 1', correct: false },
+        { text: 'answer 2', correct: false },
+        { text: 'answer 3', correct: false },
+        { text: 'answer 4', correct: true }
+        ]
+
+    },
+    {
+        question: 'question 3',
+        answers: [
+        { text: 'answer 1', correct: false },
+        { text: 'answer 2', correct: false },
+        { text: 'answer 3', correct: false },
+        { text: 'answer 4', correct: true }
+        ]
+
+    },
+    {
+        question: 'question 4',
+        answers: [
+        { text: 'answer 1', correct: false },
+        { text: 'answer 2', correct: false },
+        { text: 'answer 3', correct: false },
+        { text: 'answer 4', correct: true }
+        ]
+
+    },
+    {
+        question: 'question 5',
+        answers: [
+        { text: 'answer 1', correct: false },
+        { text: 'answer 2', correct: false },
+        { text: 'answer 3', correct: false },
+        { text: 'answer 4', correct: true }
+        ]
+
+    },
+]
 var timeLeft = 60
 var timerID;
 var timerElement = document.getElementById("timer");
 var startButton = document.getElementById("start-btn");
 var nextButton = document.getElementById("next-btn");
-var questionContainerEl = document.getElementById("question-container");
-var startContainerEl = document.getElementById("start-container");
-var questionEl = document.getElementById("question");
-var answerButtonsEl = document.getElementById("answer-buttons");
-var checkAnswerEl = document.getElementById("check-answer");
+var questionContainerElement = document.getElementById("question-container");
+var startContainerElement = document.getElementById("start-container");
+var questionElement = document.getElementById("questions");
+var answerButtonsElement = document.getElementById("answer-btn");
+var checkAnswerElement = document.getElementById("check-answer");
 var viewHighScores = document.getElementById("highscores-link");
 var submitButton = document.getElementById("submit-btn");
 var clearScoreButton = document.getElementById("clear-btn");
@@ -15,67 +67,19 @@ var initialsField = document.getElementById("player-name");
 var restartButton = document.getElementById("restart-btn");
 var scoreField = document.getElementById("player-score");
 var scores = JSON.parse(localStorage.getItem("scores")) || [];
-var shuffledQuestions, currentQuestionIndex;;
+var shuffledQuestions, currentQuestionIndex;
 
-var questions = [
-    {
-        question: "question 1",
-        answers: [
-        { text: "answer 1", correct: false },
-        { text: "answer 2", correct: false },
-        { text: "answer 3", correct: false },
-        { text: "answer 4", correct: true }
-        ]
 
-    },
-    {
-        question: "question 2",
-        answers: [
-        { text: "answer 1", correct: false },
-        { text: "answer 2", correct: true },
-        { text: "answer 3", correct: false },
-        { text: "answer 4", correct: false }
-        ]
-
-    },
-    {
-        question: "question 3",
-        answers: [
-        { text: "answer 1", correct: true },
-        { text: "answer 2", correct: false },
-        { text: "answer 3", correct: false },
-        { text: "answer 4", correct: false }
-        ]
-
-    },
-    {
-        question: "question 4",
-        answers: [
-        { text: "answer 1", correct: true },
-        { text: "answer 2", correct: false },
-        { text: "answer 3", correct: false },
-        { text: "answer 4", correct: false }
-        ]
-
-    },
-    {
-        question: "question 5",
-        answers: [
-        { text: "answer 1", correct: false },
-        { text: "answer 2", correct: false },
-        { text: "answer 3", correct: true },
-        { text: "answer 4", correct: false }
-        ]
-
-    },
-]
 
 // Start button trigger the first question and next button to display
-startButton.addEventListener("click", startQuiz);
-nextButton.addEventListener("click", () => {
+startButton.addEventListener("click", startGame);
+if (nextButton) {
+    nextButton.classList.add("hide")
+    nextButton.addEventListener("click", () => {
     currentQuestionIndex++
     setNextQuestion()
-});
+    
+})};
 
 // Timer
 function timeTick() {
@@ -84,49 +88,50 @@ function timeTick() {
     if (timeLeft <= 0) {
         saveScore();
     }
-}
+};
 
 //start the quiz
-function startQuiz () {
+function startGame () {
     timerID = setInterval(timeTick, 1000);
-    startcontainerElement.classList.add("hide");
+    startContainerElement.classList.add("hide");
     shuffledQuestions = questions.sort(() => Math.random() - .5)
     currentQuestionIndex = 0
     questionContainerElement.classList.remove("hide");
-
+//console.log("text");
     timeTick();
     setNextQuestion();
 };
 
 //move to the next quesiton
-function setNextQuestion () {
+function setNextQuestion() {
     resetState();
     showQuestion(shuffledQuestions[currentQuestionIndex]);
 };
 
 //displays question
-function showQuestion(question) {
-    questionElement.innerText = question.question
-    question.answers.forEach(answer => {
-        var button = document.createElement("button")
-        button.innerText = answer.text
+function showQuestion(questions) {
+    questionElement.innerText = questions.question
+    questions.answers.forEach(answers => {
+        var button = document.createElement("btn")
+        button.innerText = answers.text
         button.classList.add("btn")
-        if (answer.correct) {
-            button.dataset.correct = answer.correct
+        if (answers.correct) {
+            button.dataset.correct = answers.correct
         }
         button.addEventListener("click", selectAnswer)
         answerButtonsElement.appendChild(button)
     })
+    //console.log("text")
 };
 
 // Reset state function
 function resetState() {
     //clearStatusClass(document.body)
     nextButton.classList.add("hide")
-    checkAnswerEl.classList.add("hide")
-    while (answerButtonsEl.firstChild) {
-        answerButtonsEl.removeChild
-            (answerButtonsEl.firstChild)
+    checkAnswerElement.classList.add("hide")
+    while (answerButtonsElement.firstChild) {
+        answerButtonsElement.removeChild
+            (answerButtonsElement.firstChild)
     }
 };
 
@@ -236,6 +241,7 @@ function showHighScores(initials) {
         div2.setAttribute("class", "score-div");
         div2.innerText = scores[i].timeLeft;
 
+
         highScoreElement.appendChild(div1);
         highScoreElement.appendChild(div2);
     }
@@ -257,4 +263,10 @@ submitButton.addEventListener("click", function (event) {
 // Restart or reload the page
 restartButton.addEventListener("click", function () {
     window.location.reload();
+});
+
+// Clear localStorage items 
+clearScoreButton.addEventListener("click", function () {
+    localStorage.clear();
+    document.getElementById("highscore").innerHTML = "";
 });

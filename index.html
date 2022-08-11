@@ -30,18 +30,22 @@
     </section>
 
 <!-- this section contains the classes and ids for the answer button grid-->
-    <section id="question-container" class="hide">
-        <h2 id="quizQuestion">Question</h2>
+    <!-- <div class="container"> -->
+    <section>
+    <div id="question-container" class="hide">
+        <h2 id="questions">Question</h2>
         <div id="answer-btn" class="answer-grid">
             <button class="btn">Answer 1</button>
             <button class="btn">Answer 2</button>
             <button class="btn">Answer 3</button>
             <button class="btn">Answer 4</button>
         </div>
+    </div>
         <h2 id="check-answer" class="right-wrong hide"></h2>
         <div class="controls">
-            <button id="next-btn" class="next-btn hide">Next Question</button>
+            <button id="next-btn" class="next-btn">Next Question</button>
         </div>
+    </div>
     </section>
 
 <!-- the form to submit your initials, includes the text field that you type your initials into which is the form. -->
@@ -55,13 +59,13 @@
     </section>
 
 <!-- this section contains the leader board where the scores will be locally stored-->
-    <section id="highscores" class="highscores-container, hide">
+    <section id="highscores" class="highscores-container hide">
         <div id="high-scores">
-            <h2 class="centered">Leaderboard</h2>
-            <div id="highscore" class="highscore-list"></div>
-            <div class="controls">
-                <button id="restart-btn">Restart the Quiz</button>
-                <button id="clear-btn">Clear Scores</button>
+            <h1 class="centered">Leaderboard</h1>
+                <div id="highscore" class="highscore highscore-list"></div>
+                <div class="controls">
+                    <button id="restart-btn">Restart the Quiz</button>
+                    <button id="clear-btn">Clear Scores</button>
             </div>
         </div>
     </section>
