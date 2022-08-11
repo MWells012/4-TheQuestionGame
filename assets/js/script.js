@@ -17,6 +17,58 @@ var scoreField = document.getElementById("player-score");
 var scores = JSON.parse(localStorage.getItem("scores")) || [];
 var shuffledQuestions, currentQuestionIndex;;
 
+var questions = [
+    {
+        question: "question 1",
+        answers: [
+        { text: "answer 1", correct: false },
+        { text: "answer 2", correct: false },
+        { text: "answer 3", correct: false },
+        { text: "answer 4", correct: true }
+        ]
+
+    },
+    {
+        question: "question 2",
+        answers: [
+        { text: "answer 1", correct: false },
+        { text: "answer 2", correct: true },
+        { text: "answer 3", correct: false },
+        { text: "answer 4", correct: false }
+        ]
+
+    },
+    {
+        question: "question 3",
+        answers: [
+        { text: "answer 1", correct: true },
+        { text: "answer 2", correct: false },
+        { text: "answer 3", correct: false },
+        { text: "answer 4", correct: false }
+        ]
+
+    },
+    {
+        question: "question 4",
+        answers: [
+        { text: "answer 1", correct: true },
+        { text: "answer 2", correct: false },
+        { text: "answer 3", correct: false },
+        { text: "answer 4", correct: false }
+        ]
+
+    },
+    {
+        question: "question 5",
+        answers: [
+        { text: "answer 1", correct: false },
+        { text: "answer 2", correct: false },
+        { text: "answer 3", correct: true },
+        { text: "answer 4", correct: false }
+        ]
+
+    },
+]
 
 // Start button trigger the first question and next button to display
 startButton.addEventListener("click", startQuiz);
