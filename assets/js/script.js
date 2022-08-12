@@ -1,51 +1,51 @@
 var questions = [
     {
-        question: 'question 1',
+        question: 'Question 1: The Lion, the Witch and the ____ ??',
         answers: [
-        { text: 'answer 1', correct: false },
-        { text: 'answer 2', correct: false },
-        { text: 'answer 3', correct: false },
-        { text: 'answer 4', correct: true }
+        { text: 'Dresser', correct: false },
+        { text: 'Wardrobe', correct: true },
+        { text: 'Closet', correct: false },
+        { text: 'Desk', correct: false }
         ]
 
     },
     {
-        question: 'question 2',
+        question: 'Question 2: What mythical creature does not fly ?',
         answers: [
-        { text: 'answer 1', correct: false },
-        { text: 'answer 2', correct: false },
-        { text: 'answer 3', correct: false },
-        { text: 'answer 4', correct: true }
+        { text: 'Faeries', correct: false },
+        { text: 'Dragons', correct: false },
+        { text: 'Nymphs', correct: true },
+        { text: 'Hippogriff', correct: false }
         ]
 
     },
     {
-        question: 'question 3',
+        question: 'Question 3: Which is not a mythical creature?',
         answers: [
-        { text: 'answer 1', correct: false },
-        { text: 'answer 2', correct: false },
-        { text: 'answer 3', correct: false },
-        { text: 'answer 4', correct: true }
+        { text: 'Dragon', correct: false },
+        { text: 'Centaur', correct: false },
+        { text: 'Unicorn', correct: false },
+        { text: 'Frog', correct: true }
         ]
 
     },
     {
-        question: 'question 4',
+        question: 'What is the movie series about wizards and the boy who lived?',
         answers: [
-        { text: 'answer 1', correct: false },
-        { text: 'answer 2', correct: false },
-        { text: 'answer 3', correct: false },
-        { text: 'answer 4', correct: true }
+        { text: 'Wizards of Waverly Place', correct: false },
+        { text: 'Wizard of Oz', correct: false },
+        { text: 'Harry Potter', correct: true },
+        { text: 'Lord of the Rings', correct: false }
         ]
 
     },
     {
-        question: 'question 5',
+        question: 'What supposed creature lives in Scotland?',
         answers: [
-        { text: 'answer 1', correct: false },
-        { text: 'answer 2', correct: false },
-        { text: 'answer 3', correct: false },
-        { text: 'answer 4', correct: true }
+        { text: 'Chupacabra', correct: false },
+        { text: 'Lochness Monster', correct: true },
+        { text: 'Big Foot', correct: false },
+        { text: 'Kraken', correct: false }
         ]
 
     },
