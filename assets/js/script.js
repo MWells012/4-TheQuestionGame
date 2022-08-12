@@ -138,7 +138,6 @@ function resetState() {
 
 function selectAnswer(e) {
     var selectedButton = e.target;
-    //console.dir(selectedButton);
     var correct = selectedButton.dataset.correct;
     checkAnswerElement.classList.remove("hide")
     // Check if the answer correct or wrong then show text
